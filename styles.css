@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap');
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Quicksand', sans-serif;
+    background: radial-gradient(circle, #06171C, #16D9E3);
+}
+
+/* Animasi */
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.card{
+    position: relative;
+    width: 380px;
+    height: 420px;
+    border-radius: 10px;
+    overflow: hidden;
+    
+}
+
+.card::before{
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(0deg,transparent,white,white);
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+}
+
+.card::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(0deg, transparent, white, white);
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+    animation-delay: -3s;
+}
+
+/* Card Form */
+
+.form {
+    position: absolute;
+    inset: 2px;
+    border-radius: 8px;
+    background-color: #06171C;
+    z-index: 10;
+    padding-top: 40px;
+}
+
+.card .form h2 {
+    text-align: center;
+    color: white;
+}
+
+/* Foto Profil */
+
+.foto {
+    position: absolute;
+    margin-top: -400px;
+    z-index: 99;
+
+}
+
+.foto img {
+    width: 75px;
+    border-radius: 100%;
+}
+
+.foto .circle {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-color: white;
+    border-radius: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50.5%, -52.5%);
+    z-index: -1;
+}
+
+.login-container {
+    
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.login-form {
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: white;
+    font-size: 14px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #16D9E3;
+    border-radius: 5px;
+}
+
+.login-form .form-group input:focus{
+    outline: 2px solid #a4e8ec;
+}
+
+.forget-signup{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 7px;
+    padding-right: 7px;
+}
+.forget-signup a{
+    font-size: 12px;
+    text-decoration: none;
+    color: white;
+    transition: all .15s ease-in-out;
+}
+
+.forget-signup a:hover{
+    color: rgb(189, 189, 189);
+}
+
+.login-container button{
+    background-color: #16D9E3;
+    color: white;
+    font-weight: bold;
+    margin: 25px auto;
+    border: none;
+    border-radius: 5px;
+
+    width: 125px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all .15s ease-in-out;
+
+}
+
+.login-container button:hover{
+    background-color: #0eacb4;
+}
+
+.form .login-container .registrasi{
+    display: flex;
+    justify-content: center;
+    margin-top: -15px;
+    font-size: 12px;
+    text-decoration: none;
+    color: white;
+    transition: all .15s ease-in-out;
+}
+
+.form .login-container .registrasi:hover{
+    color: rgb(189, 189, 189);
+}
+
+/* Copyright */
+
+.copyright{
+   position: absolute;
+   margin-top: 500px;
+   color: white;
+}
+
+.copyright a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: all .15s ease-in-out;
+}
+
+.copyright a:hover{
+    color: #99d6da;
+}
+
+/* Mobile display */
+@media screen and (max-width: 768px){
+    .card{
+        width: 320px;
+        height: 360px;
+    }
+
+    .foto {
+        position: absolute;
+        margin-top: -350px;
+    }
+    
+    .login-form{
+        margin-top: -40px;
+        padding: 20px;
+    }
+}
